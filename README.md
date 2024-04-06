@@ -7,7 +7,7 @@
 
 - 🌱 I’m currently learning **Full Stack Development**
 
-- 👨‍💻 My portfolio website [https://hethiskara.github.io/portfolio/](https://hethiskara.github.io/portfolio/)
+- 👨‍💻 My portfolio website **https://hethiskara.github.io/**
 
 - 💬 Ask me about **Python, HTML, CSS, MERN, Flutter, Java**
 

@@ -11,4 +11,4 @@
 
 - 💬 Ask me about **Python, HTML, CSS, MERN, Flutter, Java**
 
-- 📫 How to reach me **hethiskarnae@gmail.com**
+- 📫 How to reach me **hethiskarnar@gmail.com**

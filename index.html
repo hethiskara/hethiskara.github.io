@@ -1,250 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio</title>
-        <link rel="shortcut icon" type="image/png" href="ic.png">
-        <link rel="stylesheet" href='./files/style.css'>
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-        
-    </head>
-    <body>
-        
-        <header class="header">
-            
-            <a href="#" class="logo">Portfolio</a>
-            <nav class="navbar" id="myLinks">
-                <a href="#Home" style="--i:1" class="active" >Home</a>
-                <a href="#About" style="--i:2">About</a>
-                <a href="#Skills" style="--i:3">Skills</a>
-                <a href="#Projects" style="--i:4">Projects</a>
-                <a href="#Services" style="--i:4">Services</a>
-                <a href="#Contact" style="--i:5">Contact</a>
-            </nav>
-        </header>
-
-
-        <section class="home" id="Home">
-            <div class="home-content">
-                
-                <h3>Hello, It's Me</h3>
-                <h1>Hethiskarna S R K</h1>
-                <h4 style="--i:6">I'm a Computer Science and Engineering student who is<br>
-                    passionate in <span class="text"></span></h4>
-                
-                <div class="img">
-                     <img src="./img/cropedpic.png" class="responsive">
-                </div>
-
-                <div class="home-sci">
-                    <a href="https://www.linkedin.com/in/hethiskarna?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"style="--i:7" target="_blank"><i class='bx bxl-linkedin'></i></a>
-                    <a href="https://www.instagram.com/hethiskarna_?igsh=MTB0enpwYTFzYmNtYg=="style="--i:8" target="_blank"><i class='bx bxl-instagram' ></i></a>
-                    <a href="https://github.com/hethiskara"style="--i:10" target="_blank"><i class='bx bxl-github'></i></a>
-                </div>
-                <a href="https://drive.google.com/file/d/1Fy_dC1n6j9oScM7TfDxfzvst-ig_waXd/view?usp=sharing" style="--i:11" class="btn-box" target="_blank">Download Resume</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hethiskarna Ravi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+</head>
+<body>
+    <div class="overlay"></div>
+    <header>
+        <a href="" class="logo"><span>H</span>ethiskarna <span>R</span>avi</span></a>
+        <ul class="navlist">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#activities">Activities</a></li>
+        </ul>
+        <div class="right-header">
+            <a href="img/Hethiskarna_Resume_Latest.pdf" target="_blank" class="btn"> Download Resume <i class='bx bx-download' ></i></a>
+            <div class="menu-icon">
+                <div class="bar"></div>
             </div>
-        </section>
-
-
-        <section>
-            <div class="about" id="About">
-                <div class="about-img">
-                    <img src="./img/midclg.jpeg" class="abt-res">
-                </div>
-                <div class="about-text">
-                    <h2>About <span>Me</span></h2>
-                    <p>I am a meticulous engineer proficient in Java, Dart, MERN and Python, known for my dedication to producing high-quality work. My expertise includes Microservice Architecture, CI/CD pipelines, design patterns, Test-Driven Development and Behavior-Driven Development, ensuring system reliability and scalability. I am deeply passionate about continuous learning, driving my commitment to excellence in software engineering.<br>
-                        <br>
-                        <a href="https://drive.google.com/file/d/1Fy_dC1n6j9oScM7TfDxfzvst-ig_waXd/view?usp=sharing" style="--i:11" class="abtbtn-box" target="_blank">Download Resume</a>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        
-        <section id="Skills">
-            <h1 class="subtitle">My <span>Skills</span></h1>
-            <div class="sec">
-                <div class="container1">
-                    <h1 class="heading1" style="margin-bottom: 20px;">Technical Skills</h1>
-                    
-                    <div class="Technical-bars">
-                        <!-- Grid format for skills -->
-                        <div class="skill">
-                            <img src="./img/ml.png" alt="Machine Learning">
-                            <span>Machine Learning</span>
-                        </div>
-                        <div class="skill">
-                            <img src="./img/py.jpg" alt="Python">
-                            <span>Python</span>
-                        </div>
-                        <div class="skill">
-                            <img src="./img/java.png" alt="Java">
-                            <span>Java</span>
-                        </div>
-                        <div class="skill">
-                            <img src="./img/js.png" alt="JavaScript">
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skill">
-                            <img src="./img/html.png" alt="HTML">
-                            <span>HTML</span>
-                        </div>
-                        <div class="skill">
-                            <img src="./img/css.png" alt="CSS">
-                            <span>CSS</span>
-                        </div>
-                        <div class="skill">
-                            <img src="./img/sql.jpg" alt="SQL">
-                            <span>SQL</span>
-                        </div>
-                        <div class="skill">
-                            <img src="./img/php.png" alt="Firebase">
-                            <span>Firebase</span>
-                        </div>
-                        <div class="skill">
-                            <img src="./img/dart.png" alt="Dart">
-                            <span>Dart</span>
-                        </div>
-                        <div class="skill">
-                            <img src="./img/node.png" alt="Node.js">
-                            <span>Node.js</span>
-                        </div>
-                        <div class="skill">
-                            <img src="./img/react.png" alt="ReactJS">
-                            <span>ReactJS</span>
-                        </div>
-                        <div class="skill">
-                            <img src="./img/mongo.png" alt="MongoDB">
-                            <span>MongoDB</span>
-                        </div>
-                    </div>
-                    
-                </div>
-
-                <div class="container2">
-                    <h1 class="heading1" style="margin-bottom: 20px;">Professional Skills</h1>
-                    <div class="professional-grid">
-                        <!-- Display professional skills in a 2 x 2 grid -->
-                        <div class="skill">
-                            <img src="./img/psl.png" alt="Problem Solving">
-                            <span>Problem Solving</span>
-                        </div>
-                        <div class="skill">
-                            <img src="./img/creative.png" alt="Creativity">
-                            <span>Creativity</span>
-                        </div>
-                        <div class="skill">
-                            <img src="./img/commu.png" alt="Communication">
-                            <span>Communication</span>
-                        </div>
-                        <div class="skill">
-                            <img src="./img/team.jpg" alt="Teamwork">
-                            <span>Teamwork</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="Projects">
-            <div id="portfolio" class="services">
-                <div class="main-text" id="serv">
-                    <h2>My <span>Projects</span></h2>
-                    <div class="serv-container">
-                        <div class="row">
-                            <img src="./img/foodeven.png">
-                            <div class="layer">
-                                <h5>Food Ordering Application</h5>
-                                <p>Developed a cross-platform food ordering app for the college canteen using Flutter and Firebase.</p>
-
-                                <a href="#"><i class='bx bxs-face-mask' style="color: aliceblue;"></i></a>
-
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <img src="./img/gym.png">
-
-                            <div class="layer">
-                                <h5>Gym Buddy</h5>
-                                <p>Developed an application that helps you to find Personalized Workout and Nutrition Advisor for the Gym clients.</p>
-
-                                <a href="#"><i class='bx bxs-low-vision' style="color: aliceblue;"></i></a>
-                                
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <img src="./img/complaint.jpg">
-                            <div class="layer">
-                                <h5>complaint Box Application</h5>
-                                <p>Developed a mobile application for students and staffs to report college environmental issues.</p>
-
-                                <a href="#"><i class='bx bx-desktop' style="color: aliceblue;"></i></a>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="Services">
-            <div class="project">
-                <div class="container">
-                    <h1 class="sub-title">My <span>Services</span></h1>
-                    <div class="prj-list">
-                        <div>
-                            <i class='bx bx-code' style="color: #00eeff;"></i>
-                            <h2>MERN Development</h2>
-                            <p>Expertise in building full-stack web applications using the MERN (MongoDB, Express.js, React.js, Node.js) stack.</p>
-                            
-                        </div>
-                        <div>
-                            <i class='bx bx-cube' style="color: #00eeff;"></i>
-                            <h2>Software Development</h2>
-                            <p>Specialized in developing mobile applications for both Android and iOS platforms using modern technologies and frameworks.</p>
-                            
-                        </div>
-                        <div>
-                            <i class='bx bxl-android' style="color: #00eeff;"></i>
-                            <h2>Web Development</h2>
-                            <p>Proficient in designing and developing responsive and user-friendly websites with modern technologies such as HTML5, CSS3, and JavaScript.</p>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section class="contacts" id="Contact">
-            <div class="contact-text">
-                <h2>Contact <span>Me</span></h2>
-                <h4>Let's Work Together</h4>
-                <div class="contact-list">
-                    <li><i class='bx bxs-send'></i>hethiskarnar@gmail.com</li>
-                    <li><i class="bx bxs-phone-call" ></i>8825979384</li>
-                </div>
-                <div class="contact-icons">
-                    <a href="https://github.com/hethiskara" target="_blank"><i class='bx bxl-github'></i></a>
-                    <a href="https://www.instagram.com/hethiskarna_?igsh=MTB0enpwYTFzYmNtYg==" target="_blank"><i class="bx bxl-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/hethiskarna?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="bx bxl-linkedin"></i></a>
-                </div>
-            </div>
-            
-        </section>
-        
-        <div class="last-text">
-            <p>Developed by Hethiskarna <i class='bx bx-copyright' style="color: white;"></i> 2024</p>
         </div>
-        <a href="#Home" class="top"><i class='bx bx-up-arrow-alt' ></i></a>
+    </header>
 
-        <script src="./files/script.js"></script>
-    </body>  
+    <section class="home" id="home">
+        <div class="header-info">
+            <h1>Hethiskarna Ravi</h1>
+            <div class="text-animate">
+                <h2>Software Engineer</h2>
+            </div>
+            <div class="btn-box">
+                <a href="https://www.linkedin.com/in/hethiskarna/" target="_blank" class="btn"> Let's connect <i class='bx bx-right-arrow-alt' ></i></a>
+                <a href="img/Hethiskarna_Resume_Latest.pdf" target="_blank" class="btn d-subbtn"> View Resume <i class='bx bx-download'></i></a>
+            </div>
+            <div class="social-media">
+                <div class="bg-icon">
+                    <a href="https://www.linkedin.com/in/hethiskarna/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                    <span></span>
+                </div>
+                <div class="bg-icon">
+                    <a href="https://github.com/hethiskara" target="_blank"><i class='bx bxl-github'></i></a>
+                    <span></span>
+                </div>
+                <div class="bg-icon">
+                    <a href="https://www.instagram.com/hethiskarna_?igsh=MTB0enpwYTFzYmNtYg==" target="_blank"><i class='bx bxl-instagram'></i></a>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="img-profile">
+            <img src="img/hethis1.jpeg" alt="">
+            <div class="rotate-text">
+                <div class="text">
+                    <p> Full Stack | Frontend | Mobile App | MERN | UI / UX | PM |</p>
+                </div>
+                <span><i></i></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="img/hethis4.jpeg" alt="" class="about-image">
+        </div>
+        <div class="about-content">
+            <h2 class="heading">About Me</h2>
+            <p>Always Learning, sharing, and demystifying technology!</p>
+            <p>I am passionate about design, and development, constantly exploring and utilizing modern technology stacks in my projects. With proficiency in designing software solutions, I excel at driving project success from concept to delivery.</p>
+            <div class="row">
+                <p><span>City:</span> Santa Clara</p>
+                <p><span>Email:</span><a href="mailto: hethiskarnar@gmail.com" target="_blank" rel="noopener noreferrer" style="color: #5e646a;"> hethiskarnar@gmail</a></p>
+            </div>
+            <div class="about-btn">
+                <button class="active">Certifications</button>
+                <button>Education</button>
+                <button>Experience</button>
+            </div>
+            <div class="content-btn">
+                <div class="content">
+                    <div class="text-box">
+                        <div class="text-box">
+                        <p>Advanced Java Developer</p>
+                        <a href="https://www.linkedin.com/learning/certificates/1e4f59d0f7778638649b05f497305b8ab40866e1effa81e6338a2fa35820cad9" target="_blank"><span>Advance Java Programming</a></span>
+                    </div>
+                        <p>Machine Learning</p>
+                        <a href="https://www.linkedin.com/learning/certificates/7a210ede1a1a45942d9140ae208b1cecd5e4ee3462b9206fda46f6a153f32d2f?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3B4swkRWWnRTOs%2F%2BnRyZhMdg%3D%3D" target="_blank"><span>Applied Machine Learning: Algorithms</a></span>
+                    </div>
+                    <div class="text-box">
+                        <p>Python Fundamentals</p>
+                        <a href="https://courses.cognitiveclass.ai/certificates/558edc8367f54cdcb331c4a83cd64959"  target="_blank"><span>Python for Datascience</a></span>
+                    </div>
+                    <div class="text-box">
+                        <p>Natural Language Processing</p>
+                        <a href="https://www.linkedin.com/learning/certificates/ff402e31df541159c43b87dda6de5f33b6e6bcc600a464b6414f99a18d87a257?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_certifications_details%3B4swkRWWnRTOs%2F%2BnRyZhMdg%3D%3D" target="_blank"><span>NLP with Python for Machine Learning</a></span>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="text-box">
+                        <p>Master of Science (M.S) - Computer Science and Engg.</p>
+                        <span>Santa Clara University, CA, USA</span>
+                        <h5>2024 - 2026</h5>
+                    </div>
+                    <div class="text-box">
+                        <p>Bachelor of Engineering (B.E) - Computer Science and Engg.</p>
+                        <span>PSNA College of Engineering and Technology, TN, India</span>
+                        <h5>2020 - 2024  |  GPA: 8.4/10</h5>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="text-box">
+                        <p>Full Stack Developer</p>
+                        <span>Vibesea</span>
+                        <h5>June 2024 - Present</h5>
+                    </div>
+                    <div class="text-box">
+                        <p>Software Engineer</p>
+                        <span>AgamWorks Tech Solutions Private Limited</span>
+                        <h5>November 2023 - July 2024</h5>
+                    </div>
+                    <div class="text-box">
+                        <p>Full-Stack Developer Intern</p>
+                        <span>VJH Software Private Limited</span>
+                        <h5>June 2022 - December 2022</h5>
+                    </div>
+                    <div class="text-box">
+                        <p>Associate Software Engineer Intern</p>
+                        <span>Sriyaditha Graphics and Universe</span>
+                        <h5>January 2021 - November 2021</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <div class="main-text">
+            <h2 class="heading">Skills</h2>
+        </div>
+        <div class="allSkills">
+            <div class="skillsItem">
+                <div class="icon-skills">
+                    <i class='bx bx-code-alt' ></i><span></span>
+                </div>
+                <h3>Languages</h3>
+                <p>Java, JavaScript, TypeScript, XML, Dart, HTML, CSS, SQL, Python, PHP</p>
+            </div>
+            <div class="skillsItem">
+                <div class="icon-skills">
+                    <i class='bx bx-laptop' ></i><span></span>
+                </div>
+                <h3>Full Stack Development</h3>
+                <p> React-Native, Flutter, ReactJS, HTML/CSS, Vue, Redux, Node.js, REST API, JSON</p>
+            </div>
+            <div class="skillsItem">
+                <div class="icon-skills">
+                    <i class='bx bx-mobile-alt' ></i><span></span>
+                </div>
+                <h3>Mobile App Development</h3>
+                <p>React Native, Flutter-Dart, Java, Kotlin, Android Studio</p>
+            </div>
+            <div class="skillsItem">
+                <div class="icon-skills">
+                    <i class='bx bx-outline' ></i><span></span>
+                </div>
+                <h3>UI / UX Design</h3>
+                <p>Figma, Adobe, Sketch, Marvel, Canva</p>
+            </div>
+            <div class="skillsItem">
+                <div class="icon-skills">
+                    <i class='bx bx-data' ></i><span></span>
+                </div>
+                <h3>Databases / Cloud</h3>
+                <p>SQL, NoSQL (Firebase, MongoDB), AWS (S3, Lambda), Docker</p>
+            </div>
+             <div class="skillsItem">
+                <div class="icon-skills">
+                    <i class='bx bx-cog' ></i><span></span>
+                </div>
+                <h3>Developer Tools</h3>
+                <p>Git, GitHub, GitLab, VS Code, Google Colab, Postman, Linux</p>
+            </div>
+            <div class="skillsItem">
+                <div class="icon-skills">
+                    <i class='bx bxs-chart' ></i><span></span>
+                </div>
+                <h3>Product Management</h3>
+                <p>Jira, Asana, Confluence</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <div class="main-text">
+            <h2 class="heading">Projects</h2>
+        </div>
+        <div class="portfolio-gallery">
+            <div class="portfolio-box mix web uiux">
+                <div class="portfolio-img">
+                    <a href="https://github.com/hethiskara/FoodOrderingSystem-using-FLUTTER" target="_blank">
+                        <img src="img/projects/homefood.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="portfolio-box mix mobile ai">
+                <div class="portfolio-img">
+                    <a href="https://github.com/hethiskara/Expense-Tracker-using-REACT" target="_blank">
+                        <img src="img/projects/expense.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="portfolio-box mix web">
+                <div class="portfolio-img">
+                    <a href="https://github.com/hethiskara/NetflixClone-master" target="_blank">
+                        <img src="img/projects/netflix.jpeg" alt="">
+                    </a>
+                </div>
+            </div>
+            </div><br>
+        <div class="sub-btn" style="text-align: center;">
+            <a href="https://github.com/hethiskara?tab=repositories" target="_blank" class="btn d-subbtn">View more projects <i class='bx bx-right-arrow-alt'></i></a>
+        </div>
+    </section>
+
+    <section class="activities" id="activities">
+        <div class="main-text">
+            <h2 class="heading">Activities</h2><br>
+        </div>
+        <div class="activity-box swiper mySwiper">
+            <div class="cards swiper-wrapper">
+               
+                <div class="card swiper-slide">
+                    <div class="card-top">
+                        <img src="img/activities/finearts.jpg" alt="" style="width: 400px; height: 200px;">
+                    </div>
+                    <div class="card-info">
+                        <h2>FineArts Club PSNACET</h2>
+                        <p class="data"> Secretary & Mentor</p>
+                        <span class="text-box">2023 - 2024</span>
+                    </div>
+                </div>
+                <div class="card swiper-slide">
+                    <div class="card-top">
+                        <img src="img/activities/toast.png" alt="" style="width: 400px; height: 200px;">
+                    </div>
+                    <div class="card-info">
+                        <h2>Toastmasters Club</h2>
+                        <p class="data">Mentor & Speaker</p>
+                        <span class="text-box">2020 - 2023</span>
+                    </div>
+                </div>
+                <div class="card swiper-slide">
+                    <div class="card-top">
+                        <img src="img/activities/sih.png" alt="" style="width: 400px; height: 200px;">
+                    </div>
+                    <div class="card-info">
+                        <h2>Smart India Hackathon</h2>
+                        <p class="data">Treasurer & Representative</p>
+                        <span class="text-box"> 2021 - 2023</span>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </section>
+
+        <footer>
+        <center>
+            <div class="social-media">
+            <div class="bg-icon">
+                <a href="https://www.linkedin.com/in/hethiskarna/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+                <span></span>
+            </div>
+            <div class="bg-icon">
+                <a href="https://github.com/hethiskarna" target="_blank"><i class='bx bxl-github'></i></a>
+                <span></span>
+            </div>
+            <div class="bg-icon">
+                <a href="https://www.instagram.com/hethiskarna_?igsh=MTB0enpwYTFzYmNtYg==" target="_blank"><i class='bx bxl-instagram'></i></a>
+                <span></span>
+            </div>
+        </div>
+        </center>
+        <br><br>
+        <p>Made by <span><b>Hethiskarna Ravi</b></span></p>
+    </footer>
+
+    <div id="progress">
+        <span id="progress-value">
+            <i class='bx bxs-chevrons-up' ></i>
+        </span>
+    </div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
-

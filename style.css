@@ -844,25 +844,25 @@ footer{
     }
 }
 
-@media(max-width:1200px){
-    html{
+@media (max-width: 1200px) {
+    html {
         font-size: 95%;
         max-width: 1140px;
     }
 }
 
-@media(max-width: 1024px) {
-    body{
+@media (max-width: 1024px) {
+    body {
         max-width: 1024px;
     }
 }
 
-@media(max-width:991px){
-    header, section, footer{
+@media (max-width: 991px) {
+    header, section, footer {
         padding-left: 3%;
         padding-right: 3%;
     }
-    .home, .portfolio-box{
+    .home, .portfolio-box {
         flex-direction: column-reverse;
     }
     .header-info {
@@ -872,29 +872,29 @@ footer{
     .about {
         flex-direction: column;
     }
-    .about .about-img .about-image{
+    .about .about-img .about-image {
         width: 100%;
     }
-    .portfolio-img img{
+    .portfolio-img img {
         width: 100%;
-        height: 100%;
+        height: auto; /* Ensure images maintain aspect ratio */
     }
-    .portfolio-gallery{
-        grid-template-columns: repeat(auto-fill,minmax(250px , 1fr));
+    .portfolio-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
-    .img-profile{
+    .img-profile {
         margin-top: 3rem;
     }
 }
 
-@media(max-width:768px){
-    .header-info .h1{
-        top: 2000px;
+@media (max-width: 768px) {
+    .header-info h1 {
+        top: auto; /* Corrected position */
     }
-    .menu-icon .bar,.menu-icon::after,.menu-icon::before{
+    .menu-icon .bar, .menu-icon::after, .menu-icon::before {
         display: block;
     }
-    ul.navlist{
+    ul.navlist {
         position: absolute;
         top: -1000px;
         transition: all .3s ease;
@@ -905,14 +905,14 @@ footer{
         left: 0;
         border-top: 2px solid rgba(0, 0, 0, 0.7);
     }
-    ul.navlist a{
+    ul.navlist a {
         font-size: 1.5rem;
         margin: 1rem 0;
     }
-    .navlist.active{
+    .navlist.active {
         top: 100%;
     }
-    .overlay{
+    .overlay {
         width: 100vw;
         height: 100vh;
         top: 0;
@@ -921,58 +921,65 @@ footer{
         background: rgba(0,0,0,0.5);
         z-index: 8;
         opacity: 0;
-        transform: .3s;
+        transition: .3s;
         pointer-events: none;
     }
-    body.open .overlay{
+    body.open .overlay {
         opacity: 1;
         pointer-events: auto;
     }
-    .btn{
+    .btn {
         padding: 10px;
     }
-    .home{
+    .home {
         grid-gap: 0;
     }
-    .fillter-buttons button{
+    .filter-buttons button {
         padding: 10px;
         font-size: .8rem;
     }
 }
 
-@media(max-width:540px){
+@media (max-width: 540px) {
     body {
         max-width: 540px;
     }
-    html{
+    html {
         font-size: 80%;
     }
-    section{
+    section {
         padding: 50px 3%;
     }
-    .rotate-text{
+    .rotate-text {
         display: none;
     }
-    .img-profile img{
+    .img-profile img {
         width: 100%;
     }
-    .text-animate{
-        /* width: 23.8rem; */
-        width: 100rem;
+    .text-animate {
+        width: 100%; /* Ensure it scales correctly */
     }
-    .btn-box{
-        width: 266px;
+    .btn-box {
+        width: 100%;
+        text-align: center;
         margin-bottom: 3rem;
     }
-    .about-btn button{
+    .about-btn button {
         padding: 10px 15px;
     }
-    .fillter-buttons{
+    .filter-buttons {
         display: grid;
         grid-gap: 1rem;
     }
-    .fillter-buttons button{
+    .filter-buttons button {
         width: 100%;
         padding: 13px;
     }
+    .content-btn .content {
+        padding: 10px 0;
+    }
+    .header-info h1, .header-info h2 {
+        font-size: 1.5rem; /* Adjust font size for headings */
+    }
 }
+

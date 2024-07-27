@@ -11,8 +11,10 @@
 :root{
     --bg-color:#e3edf7;
     --gradient-white-bg:linear-gradient(0deg,#fff 0%,#edf4fa 51%,#e5eef7 100%);
-    --gradient-color-bg: linear-gradient(180deg, rgb(144, 238, 144) 0%, rgb(34, 139, 34) 51%, rgb(0, 100, 0) 100%);
-    --main-color:#000000;
+    --gradient-color-bg:linear-gradient(180deg,rgb(220, 81, 102)0%,
+                                            rgb(186, 28, 46)51%,
+                                            rgb(120, 11, 24)100%);
+    --main-color:#dd3944;
     --font-color:#5e646a;
     --hover-box-shadow:rgba(0,0,0,0.19)0px 10px 20px,
                        rgba(0,0,0,0.23)0px 6px 6px;
@@ -228,7 +230,7 @@ section{
 .social-media{
     display: flex;
     justify-content:space-between;
-    width: 170px;
+    width: 220px;
     height: 30px;
 }
 

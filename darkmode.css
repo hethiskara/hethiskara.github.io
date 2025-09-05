@@ -1,14 +1,14 @@
-/* Dark Mode Styles */
+/* Light Theme Dark Mode Styles */
 :root {
-  --transition-time: 0.5s;
+  --transition-time: 0.3s;
 }
 
 body.dark-mode {
-  --bg-color: #121212;
-  --gradient-white-bg: linear-gradient(0deg, #1a1a1a 0%, #222222 51%, #2c2c2c 100%);
-  --gradient-white-bg2: linear-gradient(98deg, #1a1a1a 0%, #222222 100%);
-  --font-color: #e0e0e0;
-  --hover-box-shadow: rgba(255, 255, 255, 0.1) 0px 10px 20px, rgba(255, 255, 255, 0.05) 0px 6px 6px;
+  --bg-color: #0f172a;
+  --gradient-white-bg: linear-gradient(0deg, #1e293b 0%, #334155 51%, #475569 100%);
+  --gradient-white-bg2: linear-gradient(98deg, #1e293b 0%, #334155 100%);
+  --font-color: #cbd5e1;
+  --hover-box-shadow: rgba(37, 99, 235, 0.1) 0px 4px 25px, rgba(37, 99, 235, 0.05) 0px 2px 6px;
 }
 
 body.dark-mode header {
@@ -41,14 +41,13 @@ body.dark-mode .header-info p {
 body.dark-mode .about-content h2,
 body.dark-mode .main-text h2,
 body.dark-mode .card-info h2 {
-  color: #fff;
-  text-shadow: 0 0 10px rgba(221, 57, 68, 0.5), 0 0 20px rgba(221, 57, 68, 0.3);
+  color: #f8fafc;
 }
 
 body.dark-mode .skillsItem h3,
 body.dark-mode .about-content .row p,
 body.dark-mode .card-info p {
-  color: #e0e0e0;
+  color: #cbd5e1;
 }
 
 body.dark-mode .about-content .row p span {
@@ -56,8 +55,8 @@ body.dark-mode .about-content .row p span {
 }
 
 body.dark-mode .about-btn button {
-  background: #333;
-  color: #e0e0e0;
+  background: #334155;
+  color: #cbd5e1;
 }
 
 body.dark-mode .about-btn button.active {
@@ -66,17 +65,17 @@ body.dark-mode .about-btn button.active {
 }
 
 body.dark-mode .skillsItem {
-  background: #222;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background: #1e293b;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
 }
 
 body.dark-mode .skillsItem:hover {
-  box-shadow: 0 10px 25px rgba(221, 57, 68, 0.2);
-  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.12);
+  transform: translateY(-3px);
 }
 
 body.dark-mode .icon-skills {
-  background: #333;
+  background: #334155;
 }
 
 body.dark-mode .icon-skills i {
@@ -84,30 +83,30 @@ body.dark-mode .icon-skills i {
 }
 
 body.dark-mode .card {
-  background: #222;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background: #1e293b;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
 }
 
 body.dark-mode .card-info .data,
 body.dark-mode .card-info .text-box {
-  color: #e0e0e0;
+  color: #cbd5e1;
 }
 
 body.dark-mode footer {
-  background: #1a1a1a;
-  color: #fff;
+  background: #0f172a;
+  color: #cbd5e1;
 }
 
 body.dark-mode footer p {
-  color: #e0e0e0;
+  color: #cbd5e1;
 }
 
 body.dark-mode .btn {
-  box-shadow: 0 0 10px rgba(221, 57, 68, 0.5);
+  box-shadow: 0 4px 25px rgba(37, 99, 235, 0.15);
 }
 
 body.dark-mode .btn:hover {
-  box-shadow: 0 0 20px rgba(221, 57, 68, 0.8);
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.12);
 }
 
 /* Fix for text in the about section */
@@ -115,7 +114,7 @@ body.dark-mode .about-content .text-box p,
 body.dark-mode .about-content .text-box span,
 body.dark-mode .about-content .text-box h5,
 body.dark-mode .about-content .text-box a {
-  color: #e0e0e0;
+  color: #cbd5e1;
 }
 
 body.dark-mode .about-content .text-box a:hover {
@@ -124,12 +123,12 @@ body.dark-mode .about-content .text-box a:hover {
 
 /* Fix for portfolio items */
 body.dark-mode .portfolio-box {
-  background: #222;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background: #1e293b;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
 }
 
 body.dark-mode .portfolio-box:hover {
-  box-shadow: 0 10px 25px rgba(221, 57, 68, 0.2);
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.12);
 }
 
 /* Dark Mode Toggle */
@@ -137,7 +136,7 @@ body.dark-mode .portfolio-box:hover {
   position: relative;
   width: 60px;
   height: 30px;
-  background: #333;
+  background: #334155;
   border-radius: 30px;
   cursor: pointer;
   display: flex;
@@ -169,7 +168,7 @@ body.dark-mode .portfolio-box:hover {
 
 .theme-toggle .toggle-ball i {
   font-size: 12px;
-  color: #333;
+  color: #334155;
   transition: all var(--transition-time) ease;
 }
 
@@ -181,41 +180,41 @@ body.dark-mode .portfolio-box:hover {
   display: none;
 }
 
-/* Neon effects for dark mode - subtle and professional */
+/* Professional effects for dark mode */
 body.dark-mode .heading {
-  text-shadow: 0 0 10px rgba(221, 57, 68, 0.5), 0 0 20px rgba(221, 57, 68, 0.3);
+  text-shadow: none;
 }
 
 body.dark-mode .btn {
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  text-shadow: none;
 }
 
 body.dark-mode .icon-skills {
-  box-shadow: 0 0 15px rgba(221, 57, 68, 0.3);
+  box-shadow: 0 4px 25px rgba(37, 99, 235, 0.15);
 }
 
 /* Additional fixes for dark mode */
 body.dark-mode .text-animate h2 {
-  color: #fff;
-  -webkit-text-stroke: 0.1vw rgba(255, 255, 255, 0.5);
+  color: #f8fafc;
+  -webkit-text-stroke: 0.1vw rgba(248, 250, 252, 0.3);
 }
 
 body.dark-mode .rotate-text .text p {
-  color: #e0e0e0;
+  color: #cbd5e1;
 }
 
 body.dark-mode .menu-icon::before,
 body.dark-mode .menu-icon::after,
 body.dark-mode .menu-icon .bar {
-  background: #e0e0e0;
+  background: #cbd5e1;
 }
 
 body.dark-mode .social-media .bg-icon {
-  background: #333;
+  background: #334155;
 }
 
 body.dark-mode .social-media .bg-icon a i {
-  color: #e0e0e0;
+  color: #cbd5e1;
 }
 
 body.dark-mode .social-media .bg-icon:hover {
@@ -227,12 +226,12 @@ body.dark-mode .social-media .bg-icon:hover a i {
 }
 
 body.dark-mode #progress {
-  background: linear-gradient(to right, #222 50%, var(--main-color) 50%);
+  background: linear-gradient(to right, #1e293b 50%, var(--main-color) 50%);
 }
 
 body.dark-mode #progress-value {
-  background: #333;
-  color: #e0e0e0;
+  background: #334155;
+  color: #cbd5e1;
 }
 
 body.dark-mode #progress-value:hover {

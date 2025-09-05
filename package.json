@@ -1,14 +1,33 @@
 {
   "name": "hethiskara.github.io",
-  "version": "1.0.0",
-  "description": "My personal portfolio website",
-  "main": "index.js",
+  "version": "2.0.0",
+  "description": "Modern portfolio website showcasing software engineering and AI expertise",
+  "main": "index.html",
   "scripts": {
-    "start": "http-server -p 8080"
+    "start": "http-server -p 8080 -c-1",
+    "dev": "http-server -p 8080 -c-1 -o",
+    "build": "echo 'Static site - no build process needed'",
+    "deploy": "echo 'Ready for GitHub Pages deployment'"
   },
   "author": "Hethiskarna Ravi",
-  "license": "ISC",
+  "license": "MIT",
+  "keywords": [
+    "portfolio",
+    "software-engineer",
+    "ai-specialist",
+    "full-stack-developer",
+    "machine-learning",
+    "react",
+    "nodejs",
+    "python"
+  ],
   "devDependencies": {
     "http-server": "^14.1.1"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hethiskara/hethiskara.github.io.git"
+  },
+  "homepage": "https://hethiskara.github.io"
 }

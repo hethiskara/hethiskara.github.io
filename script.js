@@ -1,187 +1,371 @@
-// active hamburger menu 
-let menuIcon = document.querySelector(".menu-icon");
-let navlist = document.querySelector(".navlist")
-menuIcon.addEventListener("click",()=>{
-    menuIcon.classList.toggle("active");
-    navlist.classList.toggle("active");
-    document.body.classList.toggle("open");
-});
+// Modern Portfolio JavaScript - 2024
+class PortfolioApp {
+    constructor() {
+        this.init();
+    }
 
-// remove navlist
-navlist.addEventListener("click",()=>{
-    navlist.classList.remove("active");
-    menuIcon.classList.remove("active");
-    document.body.classList.remove("open");
-})
+    init() {
+        this.setupEventListeners();
+        this.initScrollAnimations();
+        this.initTypingAnimation();
+        this.initNavigation();
+        this.initSmoothScrolling();
+        this.initParallaxEffects();
+        this.initLoadingScreen();
+    }
 
+    // Event Listeners
+    setupEventListeners() {
+        // Mobile menu toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
 
+            // Close menu when clicking on links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        }
 
-// rotate text js code 
-let text = document.querySelector(".text p");
+        // Navbar scroll effect
+        window.addEventListener('scroll', this.handleNavbarScroll.bind(this));
+        
+        // Active navigation highlighting
+        window.addEventListener('scroll', this.updateActiveNavLink.bind(this));
+    }
 
-text.innerHTML = text.innerHTML.split("").map((char,i)=>
-    `<b style="transform:rotate(${i * 6.3}deg")>${char}</b>`
-).join("");
+    // Navigation scroll effect - removed color change
+    handleNavbarScroll() {
+        // Keep header consistent - no color changes on scroll
+    }
 
+    // Update active navigation link
+    updateActiveNavLink() {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
 
-// switch between about buttons 
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    }
 
-const buttons = document.querySelectorAll('.about-btn button');
-const contents = document.querySelectorAll('.content');
+    // Smooth scrolling
+    initSmoothScrolling() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 70;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    }
 
-buttons.forEach((button, index) => {
-  button.addEventListener('click', () => {
-    contents.forEach(content => content.style.display = 'none');
-    contents[index].style.display = 'block';
-    buttons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
+    // Typing animation
+    initTypingAnimation() {
+        const typingElement = document.querySelector('.typing-text');
+        if (!typingElement) return;
+
+        const texts = [
+            'Software Engineer',
+            'AI Specialist',
+            'Full-Stack Developer',
+            'Machine Learning Engineer',
+            'Tech Innovator'
+        ];
+        
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typeSpeed = 100;
+
+        const type = () => {
+            const currentText = texts[textIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                typeSpeed = 50;
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                typeSpeed = 100;
+            }
+
+            if (!isDeleting && charIndex === currentText.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(type, typeSpeed);
+        };
+
+        type();
+    }
+
+    // Scroll animations
+    initScrollAnimations() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-on-scroll', 'animated');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        const animateElements = document.querySelectorAll(
+            '.hero-content, .about-content, .timeline-item, .project-card, .skill-category, .contact-content'
+        );
+        
+        animateElements.forEach(el => {
+            el.classList.add('animate-on-scroll');
+            observer.observe(el);
+        });
+    }
+
+    // Parallax effects
+    initParallaxEffects() {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.floating-icon');
+            
+            parallaxElements.forEach((element, index) => {
+                const speed = 0.5 + (index * 0.1);
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px)`;
   });
 });
-
-
-
-// portfolio fillter 
-
-var mixer = mixitup('.portfolio-gallery',{
-    selectors: {
-        target: '.portfolio-box'
-    },
-    animation: {
-        duration: 500
     }
+
+    // Loading screen
+    initLoadingScreen() {
+        const loadingScreen = document.createElement('div');
+        loadingScreen.className = 'loading';
+        loadingScreen.innerHTML = '<div class="loader"></div>';
+        document.body.appendChild(loadingScreen);
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+                setTimeout(() => {
+                    loadingScreen.remove();
+                }, 500);
+            }, 1000);
+        });
+    }
+
+    // Navigation initialization
+    initNavigation() {
+        // Add scroll spy functionality
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        const scrollSpy = () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', scrollSpy);
+    }
+}
+
+// Initialize the portfolio app when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    new PortfolioApp();
 });
 
+// Additional utility functions
+const utils = {
+    // Smooth reveal animation for elements
+    revealOnScroll: () => {
+        const reveals = document.querySelectorAll('.reveal');
+        const windowHeight = window.innerHeight;
+        const elementVisible = 150;
 
-// Initialize swiperjs 
-
-var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
+        reveals.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            if (elementTop < windowHeight - elementVisible) {
+                element.classList.add('active');
+            }
+        });
     },
-    autoplay:{
-        delay:3000,
-        disableOnInteraction:false,
+
+    // Counter animation for stats
+    animateCounters: () => {
+        const counters = document.querySelectorAll('.stat-number');
+        const speed = 200;
+
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(updateCount, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+
+            updateCount();
+        });
     },
 
-    breakpoints: {
-        576:{
-            slidesPerView:2,
-            spaceBetween:10,
-        },
-        1200:{
-            slidesPerView:3,
-            spaceBetween:20,
-        },
+    // Walking boy animation for experience timeline
+    initWalkingBoy: () => {
+        const walkingBoy = document.getElementById('walkingBoy');
+        const expPoints = document.querySelectorAll('.exp-point');
+        
+        if (!walkingBoy || !expPoints.length) return;
+        
+        let currentPosition = 0;
+        const totalPositions = expPoints.length - 1;
+        
+        // Auto-walk animation
+        const autoWalk = () => {
+            if (currentPosition < totalPositions) {
+                currentPosition++;
+            } else {
+                currentPosition = 0;
+            }
+            
+            const percentage = (currentPosition / totalPositions) * 100;
+            walkingBoy.style.left = `${percentage}%`;
+            
+            // Highlight current experience
+            expPoints.forEach((point, index) => {
+                if (index === currentPosition) {
+                    point.classList.add('active');
+                } else {
+                    point.classList.remove('active');
+                }
+            });
+        };
+        
+        // Start auto-walk
+        setInterval(autoWalk, 3000);
+        
+        // Click to move manually
+        expPoints.forEach((point, index) => {
+            point.addEventListener('click', () => {
+                currentPosition = index;
+                const percentage = (currentPosition / totalPositions) * 100;
+                walkingBoy.style.left = `${percentage}%`;
+                
+                expPoints.forEach((p, i) => {
+                    if (i === currentPosition) {
+                        p.classList.add('active');
+                    } else {
+                        p.classList.remove('active');
+                    }
+                });
+            });
+        });
     }
-  });
-
-
-
-//   skill Progress bar 
-
-const first_skill = document.querySelector(".skill:first-child");
-const sk_counters = document.querySelectorAll(".counter span");
-const progress_bars = document.querySelectorAll(".skills svg circle");
-
-window.addEventListener("scroll",()=>{
-    if(!skillsPlayed)
-    skillsCounter();
-})
-
-
-function hasReached(el){
-    let topPosition = el.getBoundingClientRect().top;
-    if(window.innerHeight >= topPosition + el.offsetHeight)return true;
-    return false;
-}
-
-function updateCount(num,maxNum){
-    let currentNum = +num.innerText;
-    
-    if(currentNum < maxNum){
-        num.innerText = currentNum + 1;
-        setTimeout(()=>{
-            updateCount(num,maxNum)
-        },12)
-    }
-}
-
-
-let skillsPlayed = false;
-
-function skillsCounter(){
-    if(!hasReached(first_skill))return;
-    skillsPlayed = true;
-    sk_counters.forEach((counter,i)=>{
-        let target = +counter.dataset.target;
-        let strokeValue = 465 - 465 * (target / 100);
-
-        progress_bars[i].style.setProperty("--target",strokeValue);
-
-        setTimeout(()=>{
-            updateCount(counter,target);
-        },400)
-    });
-
-    progress_bars.forEach(p => p.style.animation = "progress 2s ease-in-out forwards");
-}
-
-
-// side progress bar 
-
-let calcScrollValue = ()=>{
-    let scrollProgress = document.getElementById("progress");
-    let pos = document.documentElement.scrollTop;
-
-    let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    let scrollValue = Math.round((pos * 100)/calcHeight);
-    
-    if(pos > 100){
-        scrollProgress.style.display = "grid";
-    }else{
-        scrollProgress.style.display = "none";
-    }
-
-    scrollProgress.addEventListener("click",()=>{
-        document.documentElement.scrollTop = 0;
-    });
-
-    scrollProgress.style.background = `conic-gradient(#fff ${scrollValue}%,#e6006d ${scrollValue}%)`;
 };
 
-window.onscroll = calcScrollValue;
-window.onload = calcScrollValue;
+// Initialize additional effects
+document.addEventListener('DOMContentLoaded', () => {
+    // Add reveal class to elements that should animate on scroll
+    const animateElements = document.querySelectorAll(
+        '.hero-content, .about-content, .timeline-item, .project-card, .skill-category'
+    );
+    
+    animateElements.forEach(el => {
+        el.classList.add('reveal');
+    });
 
+    // Initialize counter animation when stats section is visible
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                utils.animateCounters();
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    });
 
-// active menu 
+    const statsSection = document.querySelector('.hero-stats');
+    if (statsSection) {
+        statsObserver.observe(statsSection);
+    }
 
-let menuLi = document.querySelectorAll("header ul li a");
-let section = document.querySelectorAll('section');
+    // Initialize walking boy animation
+    utils.initWalkingBoy();
 
-function activeMenu(){
-    let len = section.length;
-    while(--len && window.scrollY + 97 < section[len].offsetTop){}
-    menuLi.forEach(sec => sec.classList.remove("active"));
-    menuLi[len].classList.add("active");
-}
-activeMenu();
-window.addEventListener("scroll",activeMenu);
-
-// scroll reveal
-
-ScrollReveal({ 
-    distance:"90px",
-    duration:2000,
-    delay:200,
-    // reset: true ,
+    // Add scroll reveal effect
+    window.addEventListener('scroll', utils.revealOnScroll);
 });
 
+// Performance optimization
+window.addEventListener('load', () => {
+    // Lazy load images
+    const images = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
 
-ScrollReveal().reveal('.hero-info,.main-text,.proposal,.heading', { origin: "top" });
-ScrollReveal().reveal('.about-img,.fillter-buttons,.contact-info', { origin: "left" });
-ScrollReveal().reveal('.about-content,.skills', { origin: "right" });
-ScrollReveal().reveal('.allServices,.portfolio-gallery,.blog-box,footer,.img-hero', { origin: "bottom" });
+    images.forEach(img => imageObserver.observe(img));
+});
 
+// Error handling
+window.addEventListener('error', (e) => {
+    console.error('Portfolio Error:', e.error);
+});

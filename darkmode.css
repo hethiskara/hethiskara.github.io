@@ -1,0 +1,250 @@
+/* Dark Mode Styles */
+:root {
+  --transition-time: 0.5s;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --gradient-white-bg: linear-gradient(0deg, #1a1a1a 0%, #222222 51%, #2c2c2c 100%);
+  --gradient-white-bg2: linear-gradient(98deg, #1a1a1a 0%, #222222 100%);
+  --font-color: #e0e0e0;
+  --hover-box-shadow: rgba(255, 255, 255, 0.1) 0px 10px 20px, rgba(255, 255, 255, 0.05) 0px 6px 6px;
+}
+
+body.dark-mode header {
+  background: var(--gradient-white-bg);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .logo {
+  color: #fff;
+}
+
+body.dark-mode .navlist li a {
+  color: #e0e0e0;
+}
+
+body.dark-mode .home, 
+body.dark-mode .about, 
+body.dark-mode .skills, 
+body.dark-mode .projects, 
+body.dark-mode .activities {
+  background: var(--gradient-white-bg2);
+}
+
+body.dark-mode .about-content p,
+body.dark-mode .skillsItem p,
+body.dark-mode .header-info p {
+  color: var(--font-color);
+}
+
+body.dark-mode .about-content h2,
+body.dark-mode .main-text h2,
+body.dark-mode .card-info h2 {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(221, 57, 68, 0.5), 0 0 20px rgba(221, 57, 68, 0.3);
+}
+
+body.dark-mode .skillsItem h3,
+body.dark-mode .about-content .row p,
+body.dark-mode .card-info p {
+  color: #e0e0e0;
+}
+
+body.dark-mode .about-content .row p span {
+  color: var(--main-color);
+}
+
+body.dark-mode .about-btn button {
+  background: #333;
+  color: #e0e0e0;
+}
+
+body.dark-mode .about-btn button.active {
+  background: var(--gradient-color-bg);
+  color: #fff;
+}
+
+body.dark-mode .skillsItem {
+  background: #222;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .skillsItem:hover {
+  box-shadow: 0 10px 25px rgba(221, 57, 68, 0.2);
+  transform: translateY(-5px);
+}
+
+body.dark-mode .icon-skills {
+  background: #333;
+}
+
+body.dark-mode .icon-skills i {
+  color: var(--main-color);
+}
+
+body.dark-mode .card {
+  background: #222;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .card-info .data,
+body.dark-mode .card-info .text-box {
+  color: #e0e0e0;
+}
+
+body.dark-mode footer {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+body.dark-mode footer p {
+  color: #e0e0e0;
+}
+
+body.dark-mode .btn {
+  box-shadow: 0 0 10px rgba(221, 57, 68, 0.5);
+}
+
+body.dark-mode .btn:hover {
+  box-shadow: 0 0 20px rgba(221, 57, 68, 0.8);
+}
+
+/* Fix for text in the about section */
+body.dark-mode .about-content .text-box p,
+body.dark-mode .about-content .text-box span,
+body.dark-mode .about-content .text-box h5,
+body.dark-mode .about-content .text-box a {
+  color: #e0e0e0;
+}
+
+body.dark-mode .about-content .text-box a:hover {
+  color: var(--main-color);
+}
+
+/* Fix for portfolio items */
+body.dark-mode .portfolio-box {
+  background: #222;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .portfolio-box:hover {
+  box-shadow: 0 10px 25px rgba(221, 57, 68, 0.2);
+}
+
+/* Dark Mode Toggle */
+.theme-toggle {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background: #333;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  transition: all var(--transition-time) ease;
+}
+
+.theme-toggle.active {
+  background: var(--gradient-color-bg);
+}
+
+.theme-toggle .toggle-ball {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  border-radius: 50%;
+  left: 4px;
+  transition: all var(--transition-time) ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.theme-toggle.active .toggle-ball {
+  left: 34px;
+}
+
+.theme-toggle .toggle-ball i {
+  font-size: 12px;
+  color: #333;
+  transition: all var(--transition-time) ease;
+}
+
+.theme-toggle.active .toggle-ball i.bx-sun {
+  display: none;
+}
+
+.theme-toggle:not(.active) .toggle-ball i.bx-moon {
+  display: none;
+}
+
+/* Neon effects for dark mode - subtle and professional */
+body.dark-mode .heading {
+  text-shadow: 0 0 10px rgba(221, 57, 68, 0.5), 0 0 20px rgba(221, 57, 68, 0.3);
+}
+
+body.dark-mode .btn {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+body.dark-mode .icon-skills {
+  box-shadow: 0 0 15px rgba(221, 57, 68, 0.3);
+}
+
+/* Additional fixes for dark mode */
+body.dark-mode .text-animate h2 {
+  color: #fff;
+  -webkit-text-stroke: 0.1vw rgba(255, 255, 255, 0.5);
+}
+
+body.dark-mode .rotate-text .text p {
+  color: #e0e0e0;
+}
+
+body.dark-mode .menu-icon::before,
+body.dark-mode .menu-icon::after,
+body.dark-mode .menu-icon .bar {
+  background: #e0e0e0;
+}
+
+body.dark-mode .social-media .bg-icon {
+  background: #333;
+}
+
+body.dark-mode .social-media .bg-icon a i {
+  color: #e0e0e0;
+}
+
+body.dark-mode .social-media .bg-icon:hover {
+  background: var(--gradient-color-bg);
+}
+
+body.dark-mode .social-media .bg-icon:hover a i {
+  color: #fff;
+}
+
+body.dark-mode #progress {
+  background: linear-gradient(to right, #222 50%, var(--main-color) 50%);
+}
+
+body.dark-mode #progress-value {
+  background: #333;
+  color: #e0e0e0;
+}
+
+body.dark-mode #progress-value:hover {
+  background: var(--main-color);
+  color: #fff;
+}
+
+/* Smooth transition for all elements */
+body, header, section, div, p, h1, h2, h3, a, button, .skillsItem, .card, footer, .btn {
+  transition: background var(--transition-time) ease, 
+              color var(--transition-time) ease, 
+              background-color var(--transition-time) ease,
+              box-shadow var(--transition-time) ease,
+              text-shadow var(--transition-time) ease;
+}
